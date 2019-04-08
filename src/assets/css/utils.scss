@@ -1,0 +1,38 @@
+$img_root: '../assets/img/';
+$color_black: #333333;
+$color_orange: #ff5c2a;
+$color_gray_c: #cccccc;
+$color_gray_6: #666666;
+$color_gray_9: #999999;
+$color_green: #28bc93;
+
+/*函数*/
+@function pxToRem($px) {
+  @return $px / 40 * 1rem;
+}
+
+@mixin display-flex() {
+  display: flex;
+  display: -webkit-flex;
+}
+
+@mixin flex($val) {
+  flex: $val;
+  -webkit-flex: $val;
+}
+
+@mixin align-items($val) {
+  align-items: $val;
+  -webkit-align-items: $val;
+}
+
+@mixin justify-content($val) {
+  justify-content: $val;
+  -webkit-justify-content: $val;
+}
+
+@mixin flex-direction($val) {
+  flex-direction: $val;
+  -webkit-flex-direction: $val;
+}
+
