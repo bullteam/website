@@ -10,6 +10,15 @@
   //-webkit-transform: translate3d(0, 0, 0);
 }
 
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
 html {
   color: #222222;
   background: #f9f9f9;
@@ -35,3 +44,9 @@ html, body, #app {
 }
 
 /*产品CSS*/
+.link {
+  cursor: pointer;
+  &:hover {
+    color: $main_color;
+  }
+}
