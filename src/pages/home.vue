@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <header>
+    <header :class="{solid:solid_header}">
       <div class="container">
         <div class="logo">
           公牛联盟
@@ -177,21 +177,30 @@
           <span>一路走来的我们</span>
           <p>我们不断在改进，同时也在不断发现bug!</p>
         </div>
-
+        <div class="flow">
+          <div class="flow-item" v-for="item in 4">
+            <div class="flow-icon">
+              <span class="iconfont">&#xe7b4;</span>
+            </div>
+            <div class="flow-content">
+              <div>新的征程</div>
+              <p>此时此刻只有老广一个人在凌晨一点钟的北京的某个角落默默地撸着代码，进行第一版本jumpserver的构建！</p>
+            </div>
+            <div class="flow-date">
+              v1.0.0
+              <p>2019-01-01</p>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
-    <section class="helper">
-      <div class="container">
-        <div class="title">
-          <span>一路走来的我们</span>
-          <p>我们不断在改进，同时也在不断发现bug!</p>
-        </div>
-
-      </div>
+    <section class="postscript">
     </section>
     <footer>
       <div class="container">
-        页脚
+        <div>
+          © 2018-2019 XXXX有限公司, All Rights Reserved. 粤ICP备XXXX号
+        </div>
       </div>
     </footer>
   </div>
@@ -202,16 +211,29 @@
 
   export default {
     data() {
-      return {}
+      return {
+        scrollTop: document.querySelector('#app').scrollTop,
+      }
     },
     beforeCreate() {
     },
     mounted() {
+      this.init();
     },
     beforeDestroy() {
     },
-    methods: {},
-    computed: {},
+    methods: {
+      init(){
+        window.addEventListener('scroll', (e) => {
+          this.scrollTop = document.querySelector('#app').scrollTop;
+        }, true);
+      },
+    },
+    computed: {
+      solid_header(){
+        return this.scrollTop>200;
+      }
+    },
     watch: {}
   }
 </script>
@@ -226,6 +248,18 @@
       position: relative;
     }
     header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      height: 66px;
+      z-index: 100;
+      &.solid{
+        background: #ffffff;
+        box-shadow: 0 1px 1px #ddd;
+        nav li{
+          color: #676a6c;
+        }
+      }
       .logo {
         position: absolute;
         left: 0;
@@ -236,6 +270,7 @@
         text-align: center;
         height: 100%;
         border-radius: 0 0 5px 5px;
+        line-height: 66px;
       }
       nav {
         width: 100%;
@@ -246,6 +281,7 @@
           padding: 20px 10px;
           font-weight: bold;
           color: #ffffff;
+          font-size: 14px;
         }
       }
     }
@@ -285,7 +321,7 @@
     }
     .properties {
       .row {
-        padding: 100px 0 130px;
+        padding: 50px 0 50px;
         h2 {
           font-size: 20px;
           color: #676a6c;
@@ -422,7 +458,7 @@
     }
     .team {
       .row {
-        .col{
+        .col {
           text-align: center;
           img {
             height: 88px;
@@ -444,11 +480,123 @@
     }
     .history {
       background: #f4f4f4;
+      .flow {
+        color: #676a6c;
+        &-item {
+          position: relative;
+          margin-bottom: 50px;
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 5px;
+            background: #e7eaec;
+            height: 100%;
+            top: 50px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            z-index: 0;
+          }
+          &:last-of-type::before {
+            display: none;
+          }
+          &::after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+        }
+        &-icon {
+          position: absolute;
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          color: #fff;
+          border-radius: 50%;
+          background: $main_color;
+          text-align: center;
+          left: 0;
+          right: 0;
+          margin: 0 auto;
+          span.iconfont {
+            line-height: 50px;
+            font-size: 25px;
+          }
+          z-index: 1;
+        }
+        &-content {
+          position: relative;
+          background: #fff;
+          width: 45%;
+          display: inline-block;
+          top: 0;
+          vertical-align: top;
+          float: left;
+          box-sizing: border-box;
+          padding: 20px;
+          border-radius: 5px;
+          div {
+            margin-bottom: 10px;
+          }
+          p {
+            font-size: 13px;
+            color: #aeaeae;
+          }
+          &::after {
+            position: absolute;
+            content: '';
+            display: inline-block;
+            border-left: 10px solid #fff;
+            border-top: 10px solid transparent;
+            border-bottom: 10px solid transparent;
+            top: 10px;
+            right: -10px;
+          }
+        }
+        &-date {
+          position: relative;
+          width: 45%;
+          display: inline-block;
+          vertical-align: top;
+          left: 10%;
+          float: left;
+          font-size: 14px;
+          p {
+            color: $main_color;
+          }
+        }
+
+        &-item:nth-child(even) {
+          .flow-content {
+            left: 55%;
+            &::after {
+              border-right: 10px solid #fff;
+              border-left: 0;
+              top: 10px;
+              left: -10px;
+              right: auto;
+            }
+          }
+          .flow-date {
+            position: relative;
+            left: -45%;
+            text-align: right;
+          }
+        }
+      }
     }
-    footer{
+    .postscript {
+      background-color: $main_color;
+      background-image: url('http://jumpserver.org/img/avatar_all.png');
+      box-sizing: border-box;
+      height: 268px;
+    }
+    footer {
       height: 400px;
       background: #f4f4f4;
-      .container{
+      text-align: center;
+      .container {
         height: 100%;
         background-image: url('/static/img/bg_map.png');
         background-position: center;
