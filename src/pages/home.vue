@@ -206,17 +206,17 @@
           <p>我们不断在改进，同时也在不断发现bug!</p>
         </div>
         <div class="flow">
-          <div class="flow-item" v-for="item in 4">
+          <div class="flow-item" v-for="item in history">
             <div class="flow-icon">
-              <span class="iconfont">&#xe7b4;</span>
+              <span class="iconfont" v-html="item.icon"></span>
             </div>
             <div class="flow-content">
-              <div>新的征程</div>
-              <p>此时此刻只有老广一个人在凌晨一点钟的北京的某个角落默默地撸着代码，进行第一版本jumpserver的构建！</p>
+              <div>{{item.title}}</div>
+              <p>{{item.text}}</p>
             </div>
             <div class="flow-date">
-              v1.0.0
-              <p>2019-01-01</p>
+              {{item.version}}
+              <p>{{item.date}}</p>
             </div>
           </div>
         </div>
@@ -247,6 +247,22 @@
           'http://jumpserver.org/img/header_two.jpg',
           'http://jumpserver.org/img/header_three.jpg',
           'http://jumpserver.org/img/header_four.jpg',
+        ],
+        history:[
+          {
+            icon:'&#xe7b4;',
+            title: '标题',
+            text: '内容内容内容内容内容内容内容内容',
+            version:'v1.0',
+            date:'2019-01-01',
+          },
+          {
+            icon:'&#xe7b4;',
+            title: '标题',
+            text: '内容内容内容内容内容内容内容内容',
+            version:'v1.0',
+            date:'2019-01-01',
+          }
         ],
       }
     },
