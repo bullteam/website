@@ -3,7 +3,7 @@
     <header :class="{solid:solid_header}">
       <div class="container">
         <div class="logo">
-          公牛联盟
+          公牛开源联盟
         </div>
         <nav>
           <ul>
@@ -177,7 +177,9 @@
             <img :src="item.avatar" alt="">
             <div class="name">
               <span>{{item.name}}</span>
-              ({{item.nickname}})
+              <template v-if="item.nickname">
+                ({{item.nickname}})
+              </template>
             </div>
             <p>{{item.text}}</p>
           </div>
@@ -239,6 +241,36 @@
             nickname:'梧桐',
             text:'公牛开源联盟发起人、Zeus 项目发起人、资深架构师，历经19楼、广州菲音、唯品会、汇量科技等知名企业',
             avatar:'/static/img/avatar_hfx.jpg'
+          },
+          {
+            name:'符亮',
+            nickname:'',
+            text:'公牛开源联盟资深开发工程师、Zeus项目C位coder，超强代码输出。',
+            avatar:'/static/img/avatar_fl.jpg'
+          },
+          {
+            name:'刘德龙',
+            nickname:'南离燊',
+            text:'专职厕所清扫人员，擅长各种疏通管道。善于干翻整个集群，搞垮架构，以及经典的删库跑路。',
+            avatar:'/static/img/avatar_ldl.jpg'
+          },
+          {
+            name:'郑丛广',
+            nickname:'Hyman',
+            text:'',
+            avatar:'/static/img/avatar_zcg.jpg'
+          },
+          {
+            name:'阳九零',
+            nickname:'90',
+            text:'切图佬一个，将设计稿转换成HTML页面，H5没什么擅长的，你敢设计我就敢切，包括切产品经理',
+            avatar:'/static/img/avatar_yjl.jpg'
+          },
+          {
+            name:'何世华',
+            nickname:'Sever',
+            text:'公牛开源联盟FrontEnd长方形固体物质空间移动工程师，资深打字员。',
+            avatar:'/static/img/avatar_hsh.jpg'
           }
         ],
         history:[
@@ -585,6 +617,7 @@
       .row {
         .col {
           text-align: center;
+          height: 200px;
           img {
             height: 88px;
             width: 88px;
