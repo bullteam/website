@@ -8,13 +8,25 @@
         <nav>
           <ul>
             <li>
-              <div class="link">导航</div>
+              <div class="link">GITHUB</div>
             </li>
             <li>
-              <div class="link">导航</div>
+              <div class="link">演示体验</div>
             </li>
             <li>
-              <div class="link">导航</div>
+              <div class="link">文档</div>
+            </li>
+            <li>
+              <div class="link">软件订阅服务</div>
+            </li>
+            <li>
+              <div class="link">一体机</div>
+            </li>
+            <li>
+              <div class="link">技术咨询</div>
+            </li>
+            <li>
+              <div class="link">联系我们</div>
             </li>
           </ul>
         </nav>
@@ -22,8 +34,24 @@
     </header>
     <!--轮播-->
     <div class="carousel">
-      <div class="carousel-item">
-        <div class="img" style="background-image: url('http://jumpserver.org/img/header_one.jpg');"></div>
+      <div class="carousel-main">
+        <div class="carousel-item" :class="{active: index == carousel_index}" v-for="(item,index) in carousels">
+          <div class="img" :style="'background-image: url('+item+');'"></div>
+        </div>
+      </div>
+      <div class="carousel-arrow">
+        <div class="carousel-arrow-left" @click="carouselChange(-1)">
+
+        </div>
+        <div class="carousel-arrow-right" @click="carouselChange(1)">
+
+        </div>
+      </div>
+      <div class="carousel-nav">
+        <div class="carousel-nav-item" @click="carousel_index = index" :class="{active: index == carousel_index}"
+             v-for="(item,index) in carousels">
+
+        </div>
       </div>
     </div>
     <section class="properties">
@@ -212,7 +240,14 @@
   export default {
     data() {
       return {
-        scrollTop: document.querySelector('#app').scrollTop,
+        scroll_top: document.querySelector('#app').scrollTop,
+        carousel_index: 0,
+        carousels: [
+          'http://jumpserver.org/img/header_one.jpg',
+          'http://jumpserver.org/img/header_two.jpg',
+          'http://jumpserver.org/img/header_three.jpg',
+          'http://jumpserver.org/img/header_four.jpg',
+        ],
       }
     },
     beforeCreate() {
@@ -223,15 +258,21 @@
     beforeDestroy() {
     },
     methods: {
-      init(){
+      init() {
         window.addEventListener('scroll', (e) => {
-          this.scrollTop = document.querySelector('#app').scrollTop;
+          this.scroll_top = document.querySelector('#app').scrollTop;
         }, true);
+        setInterval(()=>{
+          this.carouselChange(1);
+        },5000);
       },
+      carouselChange(step){
+        this.carousel_index = (this.carousel_index+step>(this.carousels.length-1)?0:this.carousel_index+step<0?this.carousels.length-1:this.carousel_index+step);
+      }
     },
     computed: {
-      solid_header(){
-        return this.scrollTop>200;
+      solid_header() {
+        return this.scroll_top > 200;
       }
     },
     watch: {}
@@ -253,10 +294,18 @@
       width: 100%;
       height: 66px;
       z-index: 100;
-      &.solid{
+      transition: all 0.4s;
+      nav li {
+        transition: all 0.4s;
+      }
+      &.solid {
         background: #ffffff;
         box-shadow: 0 1px 1px #ddd;
-        nav li{
+        padding: 5px 0;
+        .logo {
+          border-radius: 5px;
+        }
+        nav li {
           color: #676a6c;
         }
       }
@@ -278,10 +327,12 @@
         height: 66px;
         li {
           display: inline-block;
-          padding: 20px 10px;
           font-weight: bold;
           color: #ffffff;
           font-size: 14px;
+          .link {
+            padding: 20px 10px;
+          }
         }
       }
     }
@@ -309,13 +360,78 @@
       padding: 50px 0;
     }
     .carousel {
-      margin-top: -66px;
+      position: relative;
+      &-main {
+        height: 444px;
+      }
       &-item {
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
         text-align: center;
+        width: 100%;
+        height: 444px;
+        transition: opacity 0.3s;
         .img {
-          height: 444px;
+          height: 100%;
           background-position: center;
           background-size: cover;
+        }
+        &.active {
+          opacity: 1;
+        }
+      }
+      &-arrow {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        height: 49.49px;
+        width: 100%;
+        margin: auto 0;
+        &-left,&-right {
+          position: absolute;
+          border-top: 10px solid #ffffff;
+          border-left: 10px solid #ffffff;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid transparent;
+          width: 15px;
+          height: 15px;
+          opacity: 0.5;
+          cursor: pointer;
+          transition: opacity 0.3s;
+          &:hover{
+            opacity: 1;
+          }
+        }
+        &-left{
+          left: 40px;
+          transform: rotate(-45deg);
+        }
+        &-right {
+          right: 40px;
+          transform: rotate(135deg);
+        }
+      }
+      &-nav {
+        text-align: center;
+        position: absolute;
+        bottom: 20px;
+        width: 100%;
+        &-item {
+          border: 1px solid #ffffff;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          display: inline-block;
+          cursor: pointer;
+          &.active {
+            background: #ffffff;
+          }
+        }
+        .carousel-nav-item + .carousel-nav-item {
+          margin-left: 10px;
         }
       }
     }
