@@ -11,22 +11,7 @@
               <div class="link">GITHUB</div>
             </li>
             <li>
-              <div class="link">演示体验</div>
-            </li>
-            <li>
               <div class="link">文档</div>
-            </li>
-            <li>
-              <div class="link">软件订阅服务</div>
-            </li>
-            <li>
-              <div class="link">一体机</div>
-            </li>
-            <li>
-              <div class="link">技术咨询</div>
-            </li>
-            <li>
-              <div class="link">联系我们</div>
             </li>
           </ul>
         </nav>
@@ -57,45 +42,45 @@
     <section class="properties">
       <div class="row container">
         <div class="col col-8">
-          <h2>多云环境下更好用的堡垒机</h2>
-          <p>1. 分布式架构设计无限扩展，轻松对接多云资产；</p>
-          <p>2. 支持使用云存储（AWS S3, ES等）存储录像、命令；</p>
+          <h2>标题标题标题标题标题</h2>
+          <p>1. 内容内容内容内容内容内容内容内容</p>
+          <p>2. 内容内容内容内容内容内容内容内容内容内容</p>
         </div>
         <div class="col col-8">
-          <h2>多云环境下更好用的堡垒机</h2>
-          <p>1. 分布式架构设计无限扩展，轻松对接多云资产；</p>
-          <p>2. 支持使用云存储（AWS S3, ES等）存储录像、命令；</p>
+          <h2>标题标题标题标题标题</h2>
+          <p>1. 内容内容内容内容内容内容内容内容</p>
+          <p>2. 内容内容内容内容内容内容内容内容内容内容</p>
         </div>
         <div class="col col-8">
-          <h2>多云环境下更好用的堡垒机</h2>
-          <p>1. 分布式架构设计无限扩展，轻松对接多云资产；</p>
-          <p>2. 支持使用云存储（AWS S3, ES等）存储录像、命令；</p>
+          <h2>标题标题标题标题标题</h2>
+          <p>1. 内容内容内容内容内容内容内容内容</p>
+          <p>2. 内容内容内容内容内容内容内容内容内容内容</p>
         </div>
       </div>
     </section>
     <section class="speciality">
       <div class="container">
         <div class="title">
-          <span>让你体验不一样的跳板机</span>
-          <p>With automated operations blood, let you experience the different feelling.</p>
+          <span>标题标题标题标题标题标题标题</span>
+          <p>English Title English Title English Title English Title English Title </p>
         </div>
         <div class="speciality-content">
           <div class="row">
             <div class="col col-6">
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">用户/用户组</div>
-                <p>用户是授权和登录的主体，用户组方便组织授权</p>
+                <div class="top">标题标题标题</div>
+                <p>副标题副标题副标题副标题副标题副标题副标题</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">用户/用户组</div>
-                <p>用户是授权和登录的主体，用户组方便组织授权</p>
+                <div class="top">标题标题标题</div>
+                <p>副标题副标题副标题副标题副标题副标题副标题</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">用户/用户组</div>
-                <p>用户是授权和登录的主体，用户组方便组织授权</p>
+                <div class="top">标题标题标题</div>
+                <p>副标题副标题副标题副标题副标题副标题副标题</p>
               </div>
             </div>
             <div class="col col-12">
@@ -104,18 +89,18 @@
             <div class="col col-6">
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">用户/用户组</div>
-                <p>用户是授权和登录的主体，用户组方便组织授权</p>
+                <div class="top">标题标题标题</div>
+                <p>副标题副标题副标题副标题副标题副标题副标题</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">用户/用户组</div>
-                <p>用户是授权和登录的主体，用户组方便组织授权</p>
+                <div class="top">标题标题标题</div>
+                <p>副标题副标题副标题副标题副标题副标题副标题</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">用户/用户组</div>
-                <p>用户是授权和登录的主体，用户组方便组织授权</p>
+                <div class="top">标题标题标题</div>
+                <p>副标题副标题副标题副标题副标题副标题副标题</p>
               </div>
             </div>
           </div>
@@ -125,8 +110,8 @@
     <section class="partner">
       <div class="container">
         <div class="title">
-          <span>他们都在用</span>
-          <p>累计安装量超过25000次.</p>
+          <span>鸣谢</span>
+          <p>副标题</p>
         </div>
         <div class="partner-content">
           <div class="row">
@@ -156,10 +141,10 @@
           <div class="row">
             <div class="col col-12" v-for="item in 4">
               <div class="function-title">
-                用户管理
+                标题标题标题
               </div>
               <div class="function-text">
-                用户管理模块，负责添加修改删除用户，把用户划分不同的用户组，方便将来授权主机.
+                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
               </div>
               <span class="iconfont">&#xe7b4;</span>
             </div>
@@ -174,7 +159,7 @@
         </div>
         <div class="video-mod">
           <video style="max-width: 100%" id="intro-video" class="" controlslist="nodownload" preload="" controls=""
-                 src="https://fit2cloud2-offline-installer.oss-cn-beijing.aliyuncs.com/tools/Jumpserver%20%E4%BB%8B%E7%BB%8Dv1.4.mp4"></video>
+                 src="/static/video/20190412_155226.mp4"></video>
         </div>
         <div class="btn-mod">
           <div class="btn">在线体验</div>
@@ -185,16 +170,16 @@
       <div class="container">
         <div class="title">
           <span>团队成员</span>
-          <p>感谢团队成员付出，才有了Bullteam.</p>
+          <p>有你们才有Bullteam</p>
         </div>
         <div class="row">
-          <div class="col col-8" v-for="item in 6">
-            <img src="http://jumpserver.org/img/wuhanxiaobai.jpeg" alt="">
+          <div class="col col-8" v-for="item in team">
+            <img :src="item.avatar" alt="">
             <div class="name">
-              <span>原名</span>
-              (昵称)
+              <span>{{item.name}}</span>
+              ({{item.nickname}})
             </div>
-            <p>Jumpserver项目发起者，资深运维工程师，毕业于著名的新东方烹饪学校，精通八大菜系.</p>
+            <p>{{item.text}}</p>
           </div>
         </div>
       </div>
@@ -202,8 +187,8 @@
     <section class="history">
       <div class="container">
         <div class="title">
-          <span>一路走来的我们</span>
-          <p>我们不断在改进，同时也在不断发现bug!</p>
+          <span>我们的历史</span>
+          <p>一路走来，征服bug</p>
         </div>
         <div class="flow">
           <div class="flow-item" v-for="item in history">
@@ -227,7 +212,7 @@
     <footer>
       <div class="container">
         <div>
-          © 2018-2019 XXXX有限公司, All Rights Reserved. 粤ICP备XXXX号
+          © 2018-2019 bullteam  公牛战队, All Rights Reserved. 粤ICP备14078736号-1
         </div>
       </div>
     </footer>
@@ -245,8 +230,16 @@
         carousels: [
           'http://jumpserver.org/img/header_one.jpg',
           'http://jumpserver.org/img/header_two.jpg',
-          'http://jumpserver.org/img/header_three.jpg',
-          'http://jumpserver.org/img/header_four.jpg',
+//          'http://jumpserver.org/img/header_three.jpg',
+//          'http://jumpserver.org/img/header_four.jpg',
+        ],
+        team:[
+          {
+            name:'黄福祥',
+            nickname:'梧桐',
+            text:'公牛开源联盟发起人、Zeus 项目发起人、资深架构师，历经19楼、广州菲音、唯品会、汇量科技等知名企业',
+            avatar:'/static/img/avatar_hfx.jpg'
+          }
         ],
         history:[
           {
