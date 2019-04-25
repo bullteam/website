@@ -6,9 +6,9 @@
           公牛开源联盟
         </div>
         <nav>
-          <ul>
+          <ul class="nav navbar-nav navbar-right">
             <li>
-              <div class="link">GITHUB</div>
+              <div class="link"><a href="https://github.com/bullteam">GITHUB</a></div>
             </li>
             <li>
               <div class="link">文档</div>
@@ -35,52 +35,51 @@
       <div class="carousel-nav">
         <div class="carousel-nav-item" @click="carousel_index = index" :class="{active: index == carousel_index}"
              v-for="(item,index) in carousels">
-
         </div>
       </div>
     </div>
     <section class="properties">
       <div class="row container">
         <div class="col col-8">
-          <h2>标题标题标题标题标题</h2>
-          <p>1. 内容内容内容内容内容内容内容内容</p>
-          <p>2. 内容内容内容内容内容内容内容内容内容内容</p>
+          <h2>多租户更好用的权限管理中心</h2>
+          <p>1. 基于casbin作为核心存储和权限引擎</p>
+          <p>2. 支持多租户多项目统一管理菜单和权限</p>
         </div>
         <div class="col col-8">
-          <h2>标题标题标题标题标题</h2>
-          <p>1. 内容内容内容内容内容内容内容内容</p>
-          <p>2. 内容内容内容内容内容内容内容内容内容内容</p>
+          <h2>颠覆传统的后台系统架构</h2>
+          <p>1. 以beego框架为基础，使用jwt做认证，实现跨语言平台协作。</p>
+          <p>2. 完全前后端分离</p>
         </div>
         <div class="col col-8">
-          <h2>标题标题标题标题标题</h2>
-          <p>1. 内容内容内容内容内容内容内容内容</p>
-          <p>2. 内容内容内容内容内容内容内容内容内容内容</p>
+          <h2>完全免费开源，追求极致用户体验</h2>
+          <p>1. 以公牛开源组织以非营利性为目的对外开源，以MIT许可协议开源。</p>
+          <p>2. 号召所有开发者一起维护，打造企业级后台开发平台Pass生态，减少重复建设。</p>
         </div>
       </div>
     </section>
     <section class="speciality">
       <div class="container">
         <div class="title">
-          <span>标题标题标题标题标题标题标题</span>
-          <p>English Title English Title English Title English Title English Title </p>
+          <span>让你享受不一样的后台开发体验</span>
+          <p>Enjoy a different background development experience </p>
         </div>
         <div class="speciality-content">
           <div class="row">
             <div class="col col-6">
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">标题标题标题</div>
-                <p>副标题副标题副标题副标题副标题副标题副标题</p>
+                <div class="top">用户/组织架构</div>
+                <p>用户是企业员工，授权登陆的主题，组织架构同步钉钉等OA组织架构</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">标题标题标题</div>
-                <p>副标题副标题副标题副标题副标题副标题副标题</p>
+                <div class="top">应用（项目管理）</div>
+                <p>应用实现权限中心多租户的单位</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">标题标题标题</div>
-                <p>副标题副标题副标题副标题副标题副标题副标题</p>
+                <div class="top">菜单管理</div>
+                <p>菜单按照应用分类别集中管理，实现菜单，路由，授权规则统一管理</p>
               </div>
             </div>
             <div class="col col-12">
@@ -89,25 +88,25 @@
             <div class="col col-6">
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">标题标题标题</div>
-                <p>副标题副标题副标题副标题副标题副标题副标题</p>
+                <div class="top">数据管理</div>
+                <p>实现数据规则统一设置</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">标题标题标题</div>
-                <p>副标题副标题副标题副标题副标题副标题副标题</p>
+                <div class="top">角色管理</div>
+                <p>按应用对各个系统进行统一角色管理，自由配置用户多角色授权</p>
               </div>
               <div class="speciality-item">
                 <span class="iconfont">&#xe7b4;</span>
-                <div class="top">标题标题标题</div>
-                <p>副标题副标题副标题副标题副标题副标题副标题</p>
+                <div class="top">日志管理</div>
+                <p>统一登陆、操作、异常登陆日志</p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="partner">
+<!--    <section class="partner">
       <div class="container">
         <div class="title">
           <span>鸣谢</span>
@@ -151,7 +150,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section class="demo">
       <div class="container">
         <div class="title">
@@ -162,7 +161,7 @@
                  src="/static/video/20190412_155226.mp4"></video>
         </div>
         <div class="btn-mod">
-          <div class="btn">在线体验</div>
+          <div class="btn"><a href="http://admin.bullteam.cn">在线体验</a></div>
         </div>
       </div>
     </section>
@@ -214,7 +213,7 @@
     <footer>
       <div class="container">
         <div>
-          © 2018-2019 bullteam  公牛战队, All Rights Reserved. 粤ICP备14078736号-1
+          © 2018-2019 bullteam  公牛开源联盟, All Rights Reserved. 粤ICP备14078736号-1
         </div>
       </div>
     </footer>
@@ -249,6 +248,12 @@
             avatar:'/static/img/avatar_fl.jpg'
           },
           {
+            name:'董南香',
+            nickname:'董小姐',
+            text:'公牛开源联盟首席产品经理，专注B端后台产品策划。',
+            avatar:'/static/img/avatar_dxj.jpg'
+          },
+          {
             name:'刘德龙',
             nickname:'南离燊',
             text:'专职厕所清扫人员，擅长各种疏通管道。善于干翻整个集群，搞垮架构，以及经典的删库跑路。',
@@ -276,17 +281,17 @@
         history:[
           {
             icon:'&#xe7b4;',
-            title: '标题',
-            text: '内容内容内容内容内容内容内容内容',
-            version:'v1.0',
-            date:'2019-01-01',
+            title: 'Zeus v1.1 提供数据权限管理',
+            text: '提供数据权限管理，支持统一数据管理',
+            version:'v1.1',
+            date:'2019-05-15',
           },
           {
             icon:'&#xe7b4;',
-            title: '标题',
-            text: '内容内容内容内容内容内容内容内容',
-            version:'v1.0',
-            date:'2019-01-01',
+            title: 'Zeus V1.0 beta 版本发布',
+            text: '为企业用户提供统一后台功能权限管理',
+            version:'v1.0 beta',
+            date:'2019-03-04',
           }
         ],
       }
@@ -399,6 +404,28 @@
     }
     section {
       padding: 50px 0;
+    }
+    .navbar-right {
+      float: right!important;
+      margin-right: -15px;
+    }
+    .navbar-nav {
+      float: left;
+      margin: 0;
+    }
+    .nav {
+      padding-left: 0;
+      margin-bottom: 0;
+      list-style: none;
+    }
+    .link >a {
+      color: #fff;
+      font-size: 14px;
+      line-height: 26px;
+      /* padding: 20px 15px; */
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: .2s ease-in-out 0s;
     }
     .carousel {
       position: relative;
