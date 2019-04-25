@@ -6,9 +6,9 @@
           公牛开源联盟
         </div>
         <nav>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav">
             <li>
-              <div class="link"><a href="https://github.com/bullteam">GITHUB</a></div>
+              <div class="link" @click="toLink('https://github.com/bullteam',true)">GITHUB</div>
             </li>
             <li>
               <div class="link">文档</div>
@@ -67,17 +67,17 @@
           <div class="row">
             <div class="col col-6">
               <div class="speciality-item">
-                <span class="iconfont">&#xe7b4;</span>
+                <span class="iconfont">&#xe645;</span>
                 <div class="top">用户/组织架构</div>
                 <p>用户是企业员工，授权登陆的主题，组织架构同步钉钉等OA组织架构</p>
               </div>
               <div class="speciality-item">
-                <span class="iconfont">&#xe7b4;</span>
+                <span class="iconfont">&#xe604;</span>
                 <div class="top">应用（项目管理）</div>
                 <p>应用实现权限中心多租户的单位</p>
               </div>
               <div class="speciality-item">
-                <span class="iconfont">&#xe7b4;</span>
+                <span class="iconfont">&#xe62a;</span>
                 <div class="top">菜单管理</div>
                 <p>菜单按照应用分类别集中管理，实现菜单，路由，授权规则统一管理</p>
               </div>
@@ -87,17 +87,17 @@
             </div>
             <div class="col col-6">
               <div class="speciality-item">
-                <span class="iconfont">&#xe7b4;</span>
+                <span class="iconfont">&#xe611;</span>
                 <div class="top">数据管理</div>
                 <p>实现数据规则统一设置</p>
               </div>
               <div class="speciality-item">
-                <span class="iconfont">&#xe7b4;</span>
+                <span class="iconfont">&#xe64d;</span>
                 <div class="top">角色管理</div>
                 <p>按应用对各个系统进行统一角色管理，自由配置用户多角色授权</p>
               </div>
               <div class="speciality-item">
-                <span class="iconfont">&#xe7b4;</span>
+                <span class="iconfont">&#xe69d;</span>
                 <div class="top">日志管理</div>
                 <p>统一登陆、操作、异常登陆日志</p>
               </div>
@@ -106,51 +106,51 @@
         </div>
       </div>
     </section>
-<!--    <section class="partner">
-      <div class="container">
-        <div class="title">
-          <span>鸣谢</span>
-          <p>副标题</p>
-        </div>
-        <div class="partner-content">
-          <div class="row">
-            <div class="col col-6" v-for="item in 4">
-              <div class="partner-item">
-                <div class="mask">
-                  <span>
-                    LENOVO
-                  </span>
-                  <p>
-                    在信息产业内多元化发展的大型企业集团，和富有创新性的国际化的科技公司。
-                  </p>
+    <!--    <section class="partner">
+          <div class="container">
+            <div class="title">
+              <span>鸣谢</span>
+              <p>副标题</p>
+            </div>
+            <div class="partner-content">
+              <div class="row">
+                <div class="col col-6" v-for="item in 4">
+                  <div class="partner-item">
+                    <div class="mask">
+                      <span>
+                        LENOVO
+                      </span>
+                      <p>
+                        在信息产业内多元化发展的大型企业集团，和富有创新性的国际化的科技公司。
+                      </p>
+                    </div>
+                    <img src="http://jumpserver.org/img/c15.png" alt="">
+                  </div>
                 </div>
-                <img src="http://jumpserver.org/img/c15.png" alt="">
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="function">
-      <div class="container">
-        <div class="title">
-          <span>功能描述</span>
-        </div>
-        <div class="function-content">
-          <div class="row">
-            <div class="col col-12" v-for="item in 4">
-              <div class="function-title">
-                标题标题标题
+        </section>
+        <section class="function">
+          <div class="container">
+            <div class="title">
+              <span>功能描述</span>
+            </div>
+            <div class="function-content">
+              <div class="row">
+                <div class="col col-12" v-for="item in 4">
+                  <div class="function-title">
+                    标题标题标题
+                  </div>
+                  <div class="function-text">
+                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                  </div>
+                  <span class="iconfont">&#xe7b4;</span>
+                </div>
               </div>
-              <div class="function-text">
-                内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-              </div>
-              <span class="iconfont">&#xe7b4;</span>
             </div>
           </div>
-        </div>
-      </div>
-    </section> -->
+        </section> -->
     <section class="demo">
       <div class="container">
         <div class="title">
@@ -161,7 +161,7 @@
                  src="/static/video/20190412_155226.mp4"></video>
         </div>
         <div class="btn-mod">
-          <div class="btn"><a href="http://admin.bullteam.cn">在线体验</a></div>
+          <div class="btn" @click="toLink('http://admin.bullteam.cn',true)">在线体验</div>
         </div>
       </div>
     </section>
@@ -234,64 +234,64 @@
 //          'http://jumpserver.org/img/header_three.jpg',
 //          'http://jumpserver.org/img/header_four.jpg',
         ],
-        team:[
+        team: [
           {
-            name:'黄福祥',
-            nickname:'梧桐',
-            text:'公牛开源联盟发起人、Zeus 项目发起人、资深架构师，历经19楼、广州菲音、唯品会、汇量科技等知名企业',
-            avatar:'/static/img/avatar_hfx.jpg'
+            name: '黄福祥',
+            nickname: '梧桐',
+            text: '公牛开源联盟发起人、Zeus 项目发起人、资深架构师，历经19楼、广州菲音、唯品会、汇量科技等知名企业',
+            avatar: '/static/img/avatar_hfx.jpg'
           },
           {
-            name:'符亮',
-            nickname:'',
-            text:'公牛开源联盟资深开发工程师、Zeus项目C位coder，超强代码输出。',
-            avatar:'/static/img/avatar_fl.jpg'
+            name: '符亮',
+            nickname: '',
+            text: '公牛开源联盟资深开发工程师、Zeus项目C位coder，超强代码输出。',
+            avatar: '/static/img/avatar_fl.jpg'
           },
           {
-            name:'董南香',
-            nickname:'董小姐',
-            text:'公牛开源联盟首席产品经理，专注B端后台产品策划。',
-            avatar:'/static/img/avatar_dxj.jpg'
+            name: '董南香',
+            nickname: '董小姐',
+            text: '公牛开源联盟首席产品经理，专注B端后台产品策划。',
+            avatar: '/static/img/avatar_dxj.jpg'
           },
           {
-            name:'刘德龙',
-            nickname:'南离燊',
-            text:'专职厕所清扫人员，擅长各种疏通管道。善于干翻整个集群，搞垮架构，以及经典的删库跑路。',
-            avatar:'/static/img/avatar_ldl.jpg'
+            name: '刘德龙',
+            nickname: '南离燊',
+            text: '专职厕所清扫人员，擅长各种疏通管道。善于干翻整个集群，搞垮架构，以及经典的删库跑路。',
+            avatar: '/static/img/avatar_ldl.jpg'
           },
           {
-            name:'郑丛广',
-            nickname:'Hyman',
-            text:'',
-            avatar:'/static/img/avatar_zcg.jpg'
+            name: '郑丛广',
+            nickname: 'Hyman',
+            text: '',
+            avatar: '/static/img/avatar_zcg.jpg'
           },
           {
-            name:'阳九零',
-            nickname:'90',
-            text:'切图佬一个，将设计稿转换成HTML页面，H5没什么擅长的，你敢设计我就敢切，包括切产品经理',
-            avatar:'/static/img/avatar_yjl.jpg'
+            name: '阳九零',
+            nickname: '90',
+            text: '切图佬一个，将设计稿转换成HTML页面，H5没什么擅长的，你敢设计我就敢切，包括切产品经理',
+            avatar: '/static/img/avatar_yjl.jpg'
           },
           {
-            name:'何世华',
-            nickname:'Sever',
-            text:'公牛开源联盟FrontEnd长方形固体物质空间移动工程师，资深打字员。',
-            avatar:'/static/img/avatar_hsh.jpg'
+            name: '何世华',
+            nickname: 'Sever',
+            text: '公牛开源联盟FrontEnd长方形固体物质空间移动工程师，资深打字员。',
+            avatar: '/static/img/avatar_hsh.jpg'
           }
         ],
-        history:[
+        history: [
           {
-            icon:'&#xe7b4;',
+            icon: '&#xe7b4;',
             title: 'Zeus v1.1 提供数据权限管理',
             text: '提供数据权限管理，支持统一数据管理',
-            version:'v1.1',
-            date:'2019-05-15',
+            version: 'v1.1',
+            date: '2019-05-15',
           },
           {
-            icon:'&#xe7b4;',
+            icon: '&#xe716;',
             title: 'Zeus V1.0 beta 版本发布',
             text: '为企业用户提供统一后台功能权限管理',
-            version:'v1.0 beta',
-            date:'2019-03-04',
+            version: 'v1.0 beta',
+            date: '2019-03-04',
           }
         ],
       }
@@ -308,12 +308,20 @@
         window.addEventListener('scroll', (e) => {
           this.scroll_top = document.querySelector('#app').scrollTop;
         }, true);
-        setInterval(()=>{
+        setInterval(() => {
           this.carouselChange(1);
-        },5000);
+        }, 5000);
       },
-      carouselChange(step){
-        this.carousel_index = (this.carousel_index+step>(this.carousels.length-1)?0:this.carousel_index+step<0?this.carousels.length-1:this.carousel_index+step);
+      carouselChange(step) {
+        this.carousel_index = (this.carousel_index + step > (this.carousels.length - 1) ? 0 : this.carousel_index + step < 0 ? this.carousels.length - 1 : this.carousel_index + step);
+      },
+      toLink(link, isOpen) {
+        if (isOpen) {
+          window.open(link);
+        } else {
+          location.href = "http://admin.bullteam.cn";
+        }
+
       }
     },
     computed: {
@@ -377,7 +385,11 @@
           color: #ffffff;
           font-size: 14px;
           .link {
-            padding: 20px 10px;
+            padding: 15px 10px 20px;
+            border-top: 5px solid transparent;
+            &:hover{
+              border-top: 5px solid $main_color;
+            }
           }
         }
       }
@@ -404,28 +416,6 @@
     }
     section {
       padding: 50px 0;
-    }
-    .navbar-right {
-      float: right!important;
-      margin-right: -15px;
-    }
-    .navbar-nav {
-      float: left;
-      margin: 0;
-    }
-    .nav {
-      padding-left: 0;
-      margin-bottom: 0;
-      list-style: none;
-    }
-    .link >a {
-      color: #fff;
-      font-size: 14px;
-      line-height: 26px;
-      /* padding: 20px 15px; */
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      transition: .2s ease-in-out 0s;
     }
     .carousel {
       position: relative;
@@ -458,7 +448,7 @@
         height: 49.49px;
         width: 100%;
         margin: auto 0;
-        &-left,&-right {
+        &-left, &-right {
           position: absolute;
           border-top: 10px solid #ffffff;
           border-left: 10px solid #ffffff;
@@ -469,11 +459,11 @@
           opacity: 0.5;
           cursor: pointer;
           transition: opacity 0.3s;
-          &:hover{
+          &:hover {
             opacity: 1;
           }
         }
-        &-left{
+        &-left {
           left: 40px;
           transform: rotate(-45deg);
         }
