@@ -3,7 +3,8 @@
     <header :class="{solid:solid_header}">
       <div class="container">
         <div class="logo">
-          公牛开源联盟
+          <img src="/static/img/icons/favicon-32x32.png" alt="">
+          <div>公牛开源联盟</div>
         </div>
         <nav>
           <ul class="nav">
@@ -373,7 +374,19 @@
         text-align: center;
         height: 100%;
         border-radius: 0 0 5px 5px;
-        line-height: 66px;
+        box-sizing: border-box;
+        padding: 16px 0;
+        img {
+          vertical-align: middle;
+          height: 32px;
+          display: inline-block;
+        }
+        div {
+          vertical-align: middle;
+          height: 32px;
+          line-height: 32px;
+          display: inline-block;
+        }
       }
       nav {
         width: 100%;
@@ -387,7 +400,7 @@
           .link {
             padding: 15px 10px 20px;
             border-top: 5px solid transparent;
-            &:hover{
+            &:hover {
               border-top: 5px solid $main_color;
             }
           }
