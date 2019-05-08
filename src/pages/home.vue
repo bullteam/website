@@ -58,7 +58,7 @@
         </div>
       </div>
     </section>
-    <section class="speciality">
+    <section class="speciality" :class="{show:is_show_speciality}">
       <div class="container">
         <div class="title">
           <span>让你享受不一样的后台开发体验</span>
@@ -84,7 +84,7 @@
               </div>
             </div>
             <div class="col col-12">
-              中间
+              <img src="/static/img/zeus_index.jpg" alt="">
             </div>
             <div class="col col-6">
               <div class="speciality-item">
@@ -107,51 +107,6 @@
         </div>
       </div>
     </section>
-    <!--    <section class="partner">
-          <div class="container">
-            <div class="title">
-              <span>鸣谢</span>
-              <p>副标题</p>
-            </div>
-            <div class="partner-content">
-              <div class="row">
-                <div class="col col-6" v-for="item in 4">
-                  <div class="partner-item">
-                    <div class="mask">
-                      <span>
-                        LENOVO
-                      </span>
-                      <p>
-                        在信息产业内多元化发展的大型企业集团，和富有创新性的国际化的科技公司。
-                      </p>
-                    </div>
-                    <img src="http://jumpserver.org/img/c15.png" alt="">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="function">
-          <div class="container">
-            <div class="title">
-              <span>功能描述</span>
-            </div>
-            <div class="function-content">
-              <div class="row">
-                <div class="col col-12" v-for="item in 4">
-                  <div class="function-title">
-                    标题标题标题
-                  </div>
-                  <div class="function-text">
-                    内容内容内容内容内容内容内容内容内容内容内容内容内容内容内容
-                  </div>
-                  <span class="iconfont">&#xe7b4;</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section> -->
     <section class="demo">
       <div class="container">
         <div class="title">
@@ -159,7 +114,7 @@
         </div>
         <div class="video-mod">
           <video style="max-width: 100%" id="intro-video" class="" controlslist="nodownload" preload="" controls=""
-                 src="/static/video/20190412_155226.mp4"></video>
+                 src="/static/video/20190508_113116.mp4"></video>
         </div>
         <div class="btn-mod">
           <div class="btn" @click="toLink('http://admin.bullteam.cn',true)">在线体验</div>
@@ -209,11 +164,14 @@
         </div>
       </div>
     </section>
-    <section class="postscript">
-    </section>
+    <!--<section class="postscript">
+    </section>-->
     <footer>
       <div class="container">
-        <div>
+        <div class="qrcode">
+
+        </div>
+        <div class="record-info">
           © 2018-2019 bullteam  公牛开源联盟, All Rights Reserved. 粤ICP备14078736号-1
         </div>
       </div>
@@ -230,10 +188,8 @@
         scroll_top: document.querySelector('#app').scrollTop,
         carousel_index: 0,
         carousels: [
-          'http://jumpserver.org/img/header_one.jpg',
-          'http://jumpserver.org/img/header_two.jpg',
-//          'http://jumpserver.org/img/header_three.jpg',
-//          'http://jumpserver.org/img/header_four.jpg',
+          '/static/img/banner_01.jpg',
+          '/static/img/banner_02.jpg',
         ],
         team: [
           {
@@ -295,6 +251,8 @@
             date: '2019-03-04',
           }
         ],
+        banner_interval: null,
+        is_show_speciality: false,
       }
     },
     beforeCreate() {
@@ -309,12 +267,16 @@
         window.addEventListener('scroll', (e) => {
           this.scroll_top = document.querySelector('#app').scrollTop;
         }, true);
-        setInterval(() => {
+        this.banner_interval = setInterval(() => {
           this.carouselChange(1);
         }, 5000);
       },
       carouselChange(step) {
         this.carousel_index = (this.carousel_index + step > (this.carousels.length - 1) ? 0 : this.carousel_index + step < 0 ? this.carousels.length - 1 : this.carousel_index + step);
+        clearInterval(this.banner_interval);
+        this.banner_interval = setInterval(() => {
+          this.carouselChange(1);
+        }, 5000);
       },
       toLink(link, isOpen) {
         if (isOpen) {
@@ -330,7 +292,11 @@
         return this.scroll_top > 200;
       }
     },
-    watch: {}
+    watch: {
+      scroll_top(val) {
+        (val > 100) && (this.is_show_speciality = true);
+      }
+    }
   }
 </script>
 
@@ -523,6 +489,7 @@
     }
     .speciality {
       padding-bottom: 100px;
+      overflow: hidden;
       .title {
         span {
           color: $main_color;
@@ -547,6 +514,58 @@
       }
       .speciality-item + .speciality-item {
         margin-top: 30px;
+      }
+
+      $transition_time: 1s;
+      $transition_delay: 0.2s;
+      .col-12 {
+        padding: 20px;
+        opacity: 0;
+        transition: all $transition_time;
+        transform: translate(0, 100%);
+      }
+
+      .col-6{
+        .speciality-item {
+          transition: all $transition_time;
+        }
+      }
+      .col-6:nth-child(1) {
+        .speciality-item {
+          opacity: 0;
+          transform: translate(-100%, 0);
+        }
+        .speciality-item:nth-child(2){
+          transition: all $transition_time $transition_delay;
+        }
+        .speciality-item:nth-child(3){
+          transition: all $transition_time $transition_delay*2;
+        }
+      }
+      .col-6:nth-child(3) {
+        .speciality-item {
+          opacity: 0;
+          transform: translate(100%, 0);
+        }
+        .speciality-item:nth-child(2){
+          transition: all $transition_time $transition_delay;
+        }
+        .speciality-item:nth-child(3){
+          transition: all $transition_time $transition_delay*2;
+        }
+      }
+
+      &.show {
+        .col-12{
+          opacity: 1;
+          transform: translate(0, 0);
+        }
+        .col-6{
+          .speciality-item {
+            opacity: 1;
+            transform: translate(0, 0);
+          }
+        }
       }
     }
     .partner {
@@ -776,19 +795,27 @@
     }
     .postscript {
       background-color: $main_color;
-      background-image: url('http://jumpserver.org/img/avatar_all.png');
+      background-image: url('/static/img/avatars.png');
       box-sizing: border-box;
       height: 268px;
     }
     footer {
       height: 400px;
-      background: #f4f4f4;
+      background: #ffffff;
       text-align: center;
       .container {
+        position: relative;
         height: 100%;
         background-image: url('/static/img/bg_map.png');
         background-position: center;
         background-repeat: no-repeat;
+        .qrcode{
+          height: 350px;
+        }
+        .record-info{
+          color: #888;
+          font-size: 16px;
+        }
       }
     }
   }

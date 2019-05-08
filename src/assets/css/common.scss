@@ -53,6 +53,10 @@ h1, h2, h3, h4, h5, h6, p {
   margin: 0;
 }
 
+img{
+  max-width: 100%;
+}
+
 #app {
   //max-width: 750px;
 }
@@ -86,6 +90,7 @@ h1, h2, h3, h4, h5, h6, p {
   overflow: hidden;
   .col {
     float: left;
+    box-sizing: border-box;
     &-3 {
       width: 12.5%;
     }
