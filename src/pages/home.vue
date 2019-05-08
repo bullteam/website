@@ -219,7 +219,7 @@
           {
             name: '郑丛广',
             nickname: 'Hyman',
-            text: '',
+            text: 'Zeus 后端开发主力，擅长各种加班熬夜007，敲代码一把梭',
             avatar: '/static/img/avatar_zcg.jpg'
           },
           {
