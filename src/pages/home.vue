@@ -12,7 +12,7 @@
               <div class="link" @click="toLink('https://github.com/bullteam',true)">GITHUB</div>
             </li>
             <li>
-              <div class="link">文档</div>
+              <div class="link" @click="toLink('http://doc.bullteam.cn/',true)">文档</div>
             </li>
           </ul>
         </nav>
