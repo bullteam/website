@@ -48,7 +48,7 @@
         </div>
         <div class="col col-8">
           <h2>颠覆传统的后台系统架构</h2>
-          <p>1. 以beego框架为基础，使用jwt做认证，实现跨语言平台协作。</p>
+          <p>1. 以gin框架为基础，使用jwt做认证，实现跨语言平台协作。</p>
           <p>2. 完全前后端分离</p>
         </div>
         <div class="col col-8">
@@ -205,6 +205,12 @@
             avatar: '/static/img/avatar_fl.jpg'
           },
           {
+            name: '王有为',
+            nickname: 'hodor',
+            text: '公牛开源联盟首席前端专家，历经37互娱、唯品会，目前在字节跳动，参与多个开源产品开发。',
+            avatar: '/static/img/avatar_yw.jpg'
+          },
+          {
             name: '董南香',
             nickname: '董小姐',
             text: '公牛开源联盟首席产品经理，专注B端后台产品策划。',
@@ -238,6 +244,13 @@
         history: [
           {
             icon: '&#xe7b4;',
+            title: 'Zeus v1.2 使用gin重构后端',
+            text: '增加Google 两步验证和Ldap支持',
+            version: 'v1.2',
+            date: '2019-10-15',
+          },
+          {
+            icon: '&#xe7b4;',
             title: 'Zeus v1.1 提供数据权限管理',
             text: '提供数据权限管理，支持统一数据管理',
             version: 'v1.1',
@@ -245,9 +258,9 @@
           },
           {
             icon: '&#xe716;',
-            title: 'Zeus V1.0 beta 版本发布',
+            title: 'Zeus V1.0 版本发布',
             text: '为企业用户提供统一后台功能权限管理',
-            version: 'v1.0 beta',
+            version: 'v1.0',
             date: '2019-03-04',
           }
         ],
