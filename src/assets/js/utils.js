@@ -152,7 +152,7 @@ const utils = {
     let date = new Date();
     time = time || 1;
     date.setDate(date.getDate() + time);
-    document.cookie = name + "=" + value + ";path=/;domain=etcchebao.com;expires=" + date;
+    document.cookie = name + "=" + value + ";path=/;domain=e.com;expires=" + date;
   },
   getCookie(name) {
     let arr = document.cookie.split("; ");
@@ -295,7 +295,7 @@ const utils = {
     window.setDeviceInfo = function (imei, macad, udid, netstatus, idfa, operation, registrationID) {
       localStorage.setItem("deviceInfo", JSON.stringify({udid: udid, idfa: idfa}));
       $.ajax({
-        url: 'https://api-monitor' + utils.getPrefix() + '.etcchebao.com/v1/listen/event',
+        url: 'https://api-monitor' + utils.getPrefix() + '.e.com/v1/listen/event',
         dataType: 'jsonp',
         data: {
           udid: udid || idfa,
@@ -385,7 +385,7 @@ const utils = {
     };
     switch (type) {
       case 1://事件
-        url = `https://api-monitor${utils.getPrefix()}.etcchebao.com/v1/listen/event`;
+        url = `https://api-monitor${utils.getPrefix()}.e.com/v1/listen/event`;
         data.event_type = 1;//事件类型：1：页面，2：事件
         let extra = {};
         switch (extra_type) {
@@ -411,7 +411,7 @@ const utils = {
         submit();
         break;
       case 2://停留时长
-        url = `https://api-monitor${utils.getPrefix()}.etcchebao.com/v1/listen/timestay`;
+        url = `https://api-monitor${utils.getPrefix()}.e.com/v1/listen/timestay`;
         if (!this.monitor_start_time) {
           this.monitor_start_time = new Date().getTime();
         } else {

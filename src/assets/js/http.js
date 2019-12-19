@@ -1,7 +1,7 @@
 import utils from "utils";
 
 const http = {
-  fld: '.etcchebao.com',
+  fld: '.e.com',
   /**
    * jsonp请求（call调用）
    * @param obj
